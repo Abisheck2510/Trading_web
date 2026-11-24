@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.trading_web_phi_snowy.twa",
+      "sha256_cert_fingerprints": [
+        "9F:A7:59:AD:BA:7B:7E:8C:FB:BF:36:08:9A:2C:8B:79:DC:46:29:8F:70:15:04:84:1B:8C:0F:01:E2:FB:AF:85"
+      ]
+    }
+  }
+]
