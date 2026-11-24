@@ -6,11 +6,14 @@ const IST = 19800; // seconds; the chart library renders times as UTC, so shift 
 export function toYahoo(input, exchange) {
   const s = input.trim().toUpperCase().replace(/\s+/g, '');
   if (!s) return '';
+  const ix = INDEX_LIST.find((x) => x.label.replace(/\s+/g, '') === s || x.sym === s);
+  if (ix) return ix.sym;
   if (s.startsWith('^') || s.includes('.')) return s;
   return `${s}.${exchange}`;
 }
 
-export const displaySymbol = (sym) => sym.replace(/\.(NS|BO)$/, '');
+export const displaySymbol = (sym) => INDEX_LIST.find((x) => x.sym === sym)?.label || sym.replace(/\.(NS|BO)$/, '');
+export const isIndex = (sym) => !!sym && (sym.startsWith('^') || INDEX_LIST.some((x) => x.sym === sym));
 
 class DataError extends Error {
   constructor(message, kind) {

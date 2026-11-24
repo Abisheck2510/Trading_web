@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { analyze, DEFAULT_SETTINGS, STYLES } from './lib/analysis.js';
-import { loadMarket, loadSymbol, toYahoo, displaySymbol, INDEX_LIST } from './lib/data.js';
+import { loadMarket, loadSymbol, toYahoo, displaySymbol, isIndex, INDEX_LIST } from './lib/data.js';
 import { num, pct, store } from './lib/format.js';
 import PriceChart from './components/PriceChart.jsx';
 import Scanner from './components/Scanner.jsx';
@@ -79,7 +79,7 @@ function Skeleton() {
 
 export default function App() {
   const [theme, toggleTheme] = useTheme();
-  const [input, setInput] = useState(() => store.get('symbol', 'RELIANCE'));
+  const [input, setInput] = useState(() => displaySymbol(toYahoo(store.get('symbol', 'RELIANCE'), 'NS')));
   const [exchange, setExchange] = useState(() => store.get('exchange', 'NS'));
   const [style, setStyle] = useState(() => store.get('style', 'swing'));
   const [tab, setTab] = useState(() => store.get('tab', 'analysis'));
@@ -329,7 +329,7 @@ export default function App() {
                     </div>
                   </div>
                 </SimpleChart>
-                <TakeCard a={a} style={stock.style} outlook={outlook} settings={settings} onLog={logSetup} onMore={() => showDetails('plan')}
+                <TakeCard index={isIndex(stock.symbol)} a={a} style={stock.style} outlook={outlook} settings={settings} onLog={logSetup} onMore={() => showDetails('plan')}
                   logged={loggedId === `${stock.symbol}|${stock.style}`} />
               </div>
 

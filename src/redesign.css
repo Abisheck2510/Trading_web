@@ -94,9 +94,10 @@
 .plan-grid b { font-size: 15px; }
 .plan-qty { margin: 8px 0 0; color: var(--muted); line-height: 1.6; }
 .plan-qty b { color: var(--text); }
-.take-tomorrow { display: flex; justify-content: space-between; gap: 10px; }
-.take-tomorrow .mono { font-size: 14px; font-weight: 600; margin-top: 2px; }
-.take-tomorrow .right { text-align: right; }
+.take-tomorrow { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.take-tomorrow .mono { font-size: 13.5px; font-weight: 600; margin-top: 2px; white-space: nowrap; }
+.take-tomorrow .eyebrow { white-space: nowrap; }
+.take-tomorrow .right { text-align: left; }
 .take-meta { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 10px; }
 .take-meta b { color: var(--text); font-weight: 600; }
 .take-actions { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-top: auto; }

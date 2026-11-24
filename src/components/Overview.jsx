@@ -35,7 +35,7 @@ function whyList(a) {
   return items.slice(0, 5);
 }
 
-export function TakeCard({ a, style, outlook, settings, onLog, onMore, logged }) {
+export function TakeCard({ a, style, outlook, settings, onLog, onMore, logged, index = false }) {
   const v = a.verdict;
   const c = COPY[v];
   const p = a.plan;
@@ -85,10 +85,14 @@ export function TakeCard({ a, style, outlook, settings, onLog, onMore, logged })
           <div><span>Target <Tip k="target" /></span><b className="mono pos">{inr(p.target)}</b></div>
           <div><span>Reward : risk <Tip k="rr" /></span><b className={`mono ${rrOk ? 'pos' : 'neg'}`}>1 : {num(p.rr, 1)}</b></div>
         </div>
+        {index ? (
+          <p className="plan-qty small">An index can't be bought directly. Use these levels with an index ETF (e.g. NIFTYBEES) or index futures/options.</p>
+        ) : (
         <p className="plan-qty small">
           <Tip k="qty" /> With ₹{num(Number(settings.capital), 0)} and {settings.riskPct}% risk: <b className="mono">{num(p.qty, 0)} shares</b> (₹{num(p.capitalUsed, 0)}),
           max loss <b className="mono neg">{inr(p.maxLoss, 0)}</b>, profit at target <b className="mono pos">{inr(p.profit, 0)}</b>.
         </p>
+        )}
       </div>
 
       {outlook && (
