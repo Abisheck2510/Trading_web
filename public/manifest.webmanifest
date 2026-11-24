@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "Trade Signal Desk",
+  "short_name": "Signal Desk",
+  "description": "NSE / BSE stock signals: Buy, Sell or Avoid with charts, watchlists, strategies and a risk plan.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#070b13",
+  "theme_color": "#070b13",
+  "lang": "en-IN",
+  "categories": ["finance", "business"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Buy / Sell / Avoid lists", "short_name": "Lists", "url": "/?tab=scanner", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Gainers & Losers", "short_name": "Movers", "url": "/?tab=movers", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

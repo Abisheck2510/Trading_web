@@ -82,7 +82,10 @@ export default function App() {
   const [input, setInput] = useState(() => displaySymbol(toYahoo(store.get('symbol', 'RELIANCE'), 'NS')));
   const [exchange, setExchange] = useState(() => store.get('exchange', 'NS'));
   const [style, setStyle] = useState(() => store.get('style', 'swing'));
-  const [tab, setTab] = useState(() => store.get('tab', 'analysis'));
+  const [tab, setTab] = useState(() => {
+    const q = new URLSearchParams(window.location.search).get('tab');
+    return ['analysis', 'scanner', 'movers', 'journal', 'watchlist'].includes(q) ? q : store.get('tab', 'analysis');
+  });
   const [section, setSection] = useState(() => store.get('section', 'chart'));
   const [recent, setRecent] = useState(() => store.get('recent', []));
   const [settings, setSettings] = useState(() => ({ ...DEFAULT_SETTINGS, ...store.get('settings', {}) }));
