@@ -143,3 +143,19 @@
   .seg button { min-height: 36px; }
   .chart-toggles .chip, .filter-row .chip { min-height: 34px; padding: 5px 12px; }
 }
+
+/* Get app (Android APK download) */
+.getapp-btn { width: auto; padding: 0 12px; display: inline-flex; gap: 6px; font: inherit; font-weight: 600; font-size: 13px; }
+@media (max-width: 900px) { .getapp-btn { width: 38px; padding: 0; justify-content: center; } .getapp-label { display: none; } }
+.getapp-backdrop { position: fixed; inset: 0; z-index: 1000; background: rgba(0, 0, 0, 0.55); display: grid; place-items: center; padding: 16px; }
+.getapp-modal { position: relative; width: min(440px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: var(--panel); color: var(--text); border: 1px solid var(--line-strong); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); }
+.getapp-close { position: absolute; top: 8px; right: 10px; width: 36px; height: 36px; border: 0; background: transparent; color: var(--muted); font-size: 24px; cursor: pointer; border-radius: 8px; }
+.getapp-close:hover { color: var(--text); }
+.getapp-head { display: flex; gap: 14px; align-items: center; margin: 0 28px 16px 0; }
+.getapp-head img { border-radius: 14px; flex: none; }
+.getapp-head h2 { margin: 0 0 4px; font-size: 17px; }
+.getapp-head p { margin: 0; }
+.getapp-dl { width: 100%; text-decoration: none; padding: 12px 18px; font-size: 15px; }
+.getapp-steps { margin: 14px 0 8px; padding-left: 20px; display: grid; gap: 6px; font-size: 14px; }
+.getapp-alt { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.getapp-alt .btn { width: 100%; }

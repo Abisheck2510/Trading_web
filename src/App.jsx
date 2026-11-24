@@ -10,6 +10,7 @@ import Backtest from './components/Backtest.jsx';
 import SearchBox from './components/SearchBox.jsx';
 import Watchlist, { DEFAULT_WATCHLISTS } from './components/Watchlist.jsx';
 import { TakeCard } from './components/Overview.jsx';
+import GetApp from './components/GetApp.jsx';
 import { nextSession } from './lib/forecast.js';
 import { Checklist, Fundamentals, Journal, NextSession, RiskPlan, SignalTable, StrategyPanel, VerdictCard } from './components/Panels.jsx';
 
@@ -238,6 +239,7 @@ export default function App() {
           </div>
 
           <div className="top-right">
+            <GetApp />
             <button type="button" className="theme-btn" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`} title="Light / dark theme">
               {theme === 'dark'
                 ? <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
